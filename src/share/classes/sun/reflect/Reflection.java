@@ -38,7 +38,9 @@ public class Reflection {
         view, where they are sensitive or they may contain VM-internal objects.
         These Maps are updated very rarely. Rather than synchronize on
         each access, we use copy-on-write */
+    /** 需要过滤掉的字段Map */
     private static volatile Map<Class<?>,String[]> fieldFilterMap;
+    /** 需要过滤掉的方法Map */
     private static volatile Map<Class<?>,String[]> methodFilterMap;
 
     static {
